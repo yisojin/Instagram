@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Instagram</string>
+    <string name="facebook_app_id">2003640273233148</string>
+    <string name="fb_login_protocol_scheme">fb2003640273233148</string>
+</resources>
