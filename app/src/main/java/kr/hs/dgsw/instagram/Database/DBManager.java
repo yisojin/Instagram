@@ -19,7 +19,7 @@ public class DBManager extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE user(" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "emailOrTel TEXT NOT NULL, " +
+                "tel TEXT NOT NULL, " +
                 "password TEXT NOT NULL, " +
                 "name TEXT NOT NULL, " +
                 "account TEXT NOT NULL" +
@@ -36,7 +36,7 @@ public class DBManager extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
 
         db.execSQL("CREATE TABLE IF NOT EXISTS user("+ "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "emailOrTel TEXT NOT NULL, " +
+                "tel TEXT NOT NULL, " +
                 "password TEXT NOT NULL, " +
                 "name TEXT NOT NULL, " +
                 "account TEXT NOT NULL" +
