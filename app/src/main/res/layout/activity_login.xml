@@ -6,4 +6,23 @@
     android:layout_height="match_parent"
     tools:context="kr.hs.dgsw.instagram.Activity.LoginActivity">
 
+    <EditText
+        android:id="@+id/etAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Account"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="77dp" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="Password"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="148dp" />
 </android.support.constraint.ConstraintLayout>
