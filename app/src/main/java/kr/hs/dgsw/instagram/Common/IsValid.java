@@ -1,7 +1,6 @@
-package kr.hs.dgsw.instagram.Check;
+package kr.hs.dgsw.instagram.Common;
 
 import android.util.Log;
-import android.util.Patterns;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

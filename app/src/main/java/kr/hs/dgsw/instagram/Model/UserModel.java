@@ -7,6 +7,6 @@ package kr.hs.dgsw.instagram.Model;
 public class UserModel {
     private String name;
     private String tel;
-    private String email;
-
+    private String account;
+    private String password;
 }

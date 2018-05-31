@@ -1,7 +1,6 @@
 package kr.hs.dgsw.instagram.Activity;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,7 +22,7 @@ import com.facebook.login.widget.LoginButton;
 
 import org.json.JSONObject;
 
-import kr.hs.dgsw.instagram.Check.IsValid;
+import kr.hs.dgsw.instagram.Common.IsValid;
 import kr.hs.dgsw.instagram.Database.DBManager;
 import kr.hs.dgsw.instagram.R;
 
@@ -63,8 +62,10 @@ public class RegisterActivity extends AppCompatActivity {
 
                 if (isValid.isPhone(tel)) {
                     Log.i("tel", tel);
-                    dbManager.insert("INSERT INTO user(tel, name, account, password) VALUES (" + tel + "," + name + "," + account + "," + password + ");");
+                    dbManager.insert("INSERT INTO user(tel, name, account, password) VALUES (\'" + tel + "\',\'" + name + "\',\'" + account + "\',\'" + password + "\');");
 
+                    Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                    startActivity(intent);
                 } else {
                     Toast.makeText(RegisterActivity.this, "Tel is fail", Toast.LENGTH_SHORT).show();
                 }
