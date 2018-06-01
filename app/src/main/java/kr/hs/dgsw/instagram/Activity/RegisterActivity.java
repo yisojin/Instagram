@@ -17,6 +17,7 @@ import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.appevents.AppEventsLogger;
+import com.facebook.login.Login;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
@@ -65,7 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Log.i("tel", tel);
                     dbManager.insert("INSERT INTO user(tel, name, account, password) VALUES (\'" + tel + "\',\'" + name + "\',\'" + account + "\',\'" + password + "\');");
 
-                    Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                     startActivity(intent);
                 } else {
                     Toast.makeText(RegisterActivity.this, "Tel is fail", Toast.LENGTH_SHORT).show();

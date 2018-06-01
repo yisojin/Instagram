@@ -27,7 +27,11 @@
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
         <activity android:name=".Activity.MainActivity" />
-        <activity android:name=".Activity.LoginActivity"></activity>
+        <activity android:name=".Activity.LoginActivity" />
+        <activity android:name=".Activity.MyPageActivity" />
+        <activity android:name=".Activity.PostActivity" />
+        <activity android:name=".Activity.SearchActivity" />
+        <activity android:name=".Activity.UsersLogActivity"></activity>
     </application>
 
 </manifest>
