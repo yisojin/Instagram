@@ -23,9 +23,9 @@ public class DBManager extends SQLiteOpenHelper {
                 "password TEXT NOT NULL, " +
                 "name TEXT NOT NULL, " +
                 "account TEXT NOT NULL" +
-                ");"+
-                "CREATE TABLE board("+
-        "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                ");");
+        db.execSQL("CREATE TABLE board("+
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "u_id INTEGER," +
                 "content TEXT NOT NULL" +
                 ");"+"");
