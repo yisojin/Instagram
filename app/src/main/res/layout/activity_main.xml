@@ -1,19 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="kr.hs.dgsw.instagram.Activity.MainActivity">
 
-    <ImageButton
-        android:id="@+id/ibtnHome"
-        android:layout_width="91dp"
-        android:layout_height="79dp"
-        android:scaleType="fitXY"
-        android:onClick="toHome"
-        app:srcCompat="@drawable/home"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="370dp" />
+    <FrameLayout
+        android:id="@+id/frag_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </FrameLayout>
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/ibtnHome"
+            android:layout_width="71dp"
+            android:layout_height="58dp"
+            android:onClick="toHome"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/home"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="460dp" />
+
+        <ImageButton
+            android:id="@+id/ibtnSearch"
+            android:layout_width="63dp"
+            android:layout_height="56dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/search"
+            tools:layout_editor_absoluteX="71dp"
+            tools:layout_editor_absoluteY="460dp" />
+
+        <ImageButton
+            android:id="@+id/ibtnAdd"
+            android:layout_width="63dp"
+            android:layout_height="56dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/add"
+            tools:layout_editor_absoluteX="71dp"
+            tools:layout_editor_absoluteY="460dp" />
+
+        <ImageButton
+            android:id="@+id/ibtnLike"
+            android:layout_width="63dp"
+            android:layout_height="56dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/like"
+            tools:layout_editor_absoluteX="71dp"
+            tools:layout_editor_absoluteY="460dp" />
+
+        <ImageButton
+            android:id="@+id/ibtnUser"
+            android:layout_width="63dp"
+            android:layout_height="56dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/user"
+            tools:layout_editor_absoluteX="71dp"
+            tools:layout_editor_absoluteY="460dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
