@@ -4,4 +4,9 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorToLogin">#72caf9</color>
+    <color name="colorTextBackground1">#FA5858</color>
+    <color name="colorTextBackground2">#F4FA58</color>
+    <color name="colorTextBackground3">#58FAAC</color>
+    <color name="colorTextBackground4">#5858FA</color>
+    <color name="colorTextBackground5">#FA58D0</color>
 </resources>

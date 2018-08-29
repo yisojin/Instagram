@@ -25,7 +25,14 @@ import org.json.JSONObject;
 
 import kr.hs.dgsw.instagram.Common.IsValid;
 import kr.hs.dgsw.instagram.Database.DBManager;
+import kr.hs.dgsw.instagram.Model.ResponseFormat;
+import kr.hs.dgsw.instagram.Model.UserModel;
+import kr.hs.dgsw.instagram.Network.Network;
 import kr.hs.dgsw.instagram.R;
+import retrofit.Call;
+import retrofit.Callback;
+import retrofit.Response;
+import retrofit.Retrofit;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -44,14 +51,8 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText etName = (EditText) findViewById(R.id.etName);
         final EditText etAccount = (EditText) findViewById(R.id.etAccount);
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
-
-
         Button btnSubmit = (Button) findViewById(R.id.btnSubmit);
-
         css();
-
-        dbManager = new DBManager(RegisterActivity.this, "instagram.db", null, 1);
-
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,60 +63,31 @@ public class RegisterActivity extends AppCompatActivity {
                 final String account = etAccount.getText().toString();
                 final String password = etPassword.getText().toString();
 
-                if (isValid.isPhone(tel)) {
-                    Log.i("tel", tel);
-                    dbManager.insert("INSERT INTO user(tel, name, account, password) VALUES (\'" + tel + "\',\'" + name + "\',\'" + account + "\',\'" + password + "\');");
+                UserModel userModel = new UserModel();
+                userModel.setName(name);
+                userModel.setAccount(account);
+                userModel.setPassword(password);
+                userModel.setTel(tel);
 
-                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(RegisterActivity.this, "Tel is fail", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        /**
-         * facebook sign in (sign up)
-         */
-        FacebookSdk.sdkInitialize(getApplicationContext());
-        AppEventsLogger.activateApp(this);
-
-        callbackManager = CallbackManager.Factory.create();
-
-        final LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
-        loginButton.setReadPermissions("public_profile", "email");
-        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-
-                GraphRequest graphRequest = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
+                final Network network = Network.retrofit.create(Network.class);
+                Call<ResponseFormat> call = network.join(userModel);
+                 call.enqueue(new Callback<ResponseFormat>() {
                     @Override
-                    public void onCompleted(JSONObject object, GraphResponse response) {
-                        Log.v("result", object.toString());
+                    public void onResponse(Response<ResponseFormat> response, Retrofit retrofit) {
+                        Log.e("result", response.body().getData().toString());
 
+                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onFailure(Throwable t) {
+                        Log.e("Error", t.getMessage());
                     }
                 });
 
-                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-                startActivity(intent);
-
-                Bundle parameters = new Bundle();
-                parameters.putString("fields", "id,name,email,gender,birthday");
-                graphRequest.setParameters(parameters);
-                graphRequest.executeAsync();
-            }
-
-            @Override
-            public void onCancel() {
-
-            }
-
-            @Override
-            public void onError(FacebookException error) {
-                Log.e("Error", error.toString());
             }
         });
-
 
     }
 
