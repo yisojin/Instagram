@@ -8,13 +8,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import kr.hs.dgsw.instagram.Fragment.ListFrag;
 import kr.hs.dgsw.instagram.Fragment.LogFrag;
@@ -22,7 +19,6 @@ import kr.hs.dgsw.instagram.Fragment.PostFrag;
 import kr.hs.dgsw.instagram.Fragment.SearchFrag;
 import kr.hs.dgsw.instagram.Fragment.UserFrag;
 import kr.hs.dgsw.instagram.Model.BoardModel;
-import kr.hs.dgsw.instagram.Model.ResponseFormat;
 import kr.hs.dgsw.instagram.Model.ResponseListFormat;
 import kr.hs.dgsw.instagram.Network.Network;
 import kr.hs.dgsw.instagram.R;
@@ -48,27 +44,37 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
 
-        btn1 = (ImageButton) findViewById(R.id.ibtnHome);
-        btn2 = (ImageButton) findViewById(R.id.ibtnSearch);
-        btn3 = (ImageButton) findViewById(R.id.ibtnAdd);
-        btn4 = (ImageButton) findViewById(R.id.ibtnLike);
-        btn5 = (ImageButton) findViewById(R.id.ibtnUser);
+        Intent intent = new Intent(MainActivity.this, BoardListActivity.class);
+        startActivity(intent);
+
+        btn1 = findViewById(R.id.ibtnHome);
+        btn2 = findViewById(R.id.ibtnSearch);
+        btn3 = findViewById(R.id.ibtnAdd);
+        btn4 = findViewById(R.id.ibtnLike);
+        btn5 = findViewById(R.id.ibtnUser);
+
+        frag1 = new ListFrag();
+        frag2 = new SearchFrag();
+        frag3 = new PostFrag();
+        frag4 = new LogFrag();
+        frag5 = new UserFrag();
+        setFrag(0);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 setFrag(0);
-                Intent intent = new Intent(MainActivity.this, BoardListActivity.class);
-                startActivity(intent);
             }
         });
+
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setFrag(1);
             }
         });
-        btn3.setOnClickListener(new View.OnClickListener(){
+        btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setFrag(2);
@@ -90,14 +96,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        frag1 = new ListFrag();
-        frag2 = new SearchFrag();
-        frag3 = new PostFrag();
-        frag4 = new LogFrag();
-        frag5 = new UserFrag();
         setFrag(0);
     }
-
 
     public void setFrag(int num) {
         fm = getFragmentManager();

@@ -1,5 +1,7 @@
 package kr.hs.dgsw.instagram.Network;
 
+import java.util.Optional;
+
 import kr.hs.dgsw.instagram.Model.BoardModel;
 import kr.hs.dgsw.instagram.Model.ResponseFormat;
 import kr.hs.dgsw.instagram.Model.ResponseListFormat;
@@ -13,6 +15,7 @@ import retrofit.http.DELETE;
 import retrofit.http.GET;
 import retrofit.http.Header;
 import retrofit.http.POST;
+import retrofit.http.PUT;
 
 public interface Network {
 
@@ -28,11 +31,15 @@ public interface Network {
     @GET("/board")
     Call<ResponseListFormat> list();
 
+    @GET("/board/view")
+    Call<ResponseFormat> view(@Header("id") int idx);
+
     @DELETE("/board")
     Call<ResponseFormat> delete(@Body BoardModel boardModel);
+    @PUT("/board")
+    Call<ResponseFormat> update(@Header("id") int idx,@Body BoardModel boardModel);
 
-
-    public static final Retrofit retrofit = new Retrofit.Builder()
+    Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("http://10.80.161.183:8080")
             .addConverterFactory(GsonConverterFactory.create())
             .build();

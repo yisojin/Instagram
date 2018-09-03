@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import kr.hs.dgsw.instagram.App;
 import kr.hs.dgsw.instagram.Model.ResponseFormat;
 import kr.hs.dgsw.instagram.Model.UserModel;
 import kr.hs.dgsw.instagram.Network.Network;
@@ -25,6 +26,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide();
 
+        final App app = new App();
+
         final EditText etAccount = (EditText) findViewById(R.id.etAccount);
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
         Button btnLogin = (Button) findViewById(R.id.btnLogin);
@@ -33,14 +36,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
-                 String account = etAccount.getText().toString();
-                 String password = etPassword.getText().toString();
-
+                String account = etAccount.getText().toString();
+                String password = etPassword.getText().toString();
 
                 final Network network = Network.retrofit.create(Network.class);
+
                 Call<ResponseFormat> call = network.login(account, password);
                 call.enqueue(new Callback<ResponseFormat>() {
+
                     @Override
                     public void onResponse(Response<ResponseFormat> response, Retrofit retrofit) {
                         Log.e("result", response.body().toString());

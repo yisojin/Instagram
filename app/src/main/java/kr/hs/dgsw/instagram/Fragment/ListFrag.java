@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 import kr.hs.dgsw.instagram.R;
 
-public class ListFrag extends Fragment {
+public class ListFrag extends Fragment{
 
     View view;
 

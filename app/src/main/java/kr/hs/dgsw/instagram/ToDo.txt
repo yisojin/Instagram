@@ -5,3 +5,5 @@
 게시판에 이미지 올라가게하기
 로그인, 회원가입 인증부분 구체화하기
 디비구조 확인하기
+checkbox selected data remember
+insta ui ok

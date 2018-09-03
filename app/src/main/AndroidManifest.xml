@@ -4,6 +4,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -17,7 +20,7 @@
         <!-- android:name="com.facebook.sdk.ApplicationId" -->
         <!-- android:value="@string/facebook_app_id" /> -->
 
-        <activity android:name=".Activity.MainActivity">
+        <activity android:name=".Activity.RegisterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,10 +31,11 @@
         <!-- android:name="com.facebook.FacebookActivity" -->
         <!-- android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" -->
         <!-- android:label="@string/app_name" /> -->
-        <activity android:name=".Activity.RegisterActivity" />
+        <activity android:name=".Activity.MainActivity" />
         <activity android:name=".Activity.LoginActivity" />
         <activity android:name=".Activity.BoardAddActivity" />
-        <activity android:name=".Activity.BoardListActivity"></activity>
+        <activity android:name=".Activity.BoardListActivity" />
+        <activity android:name=".Activity.ViewBoardActivity"></activity>
     </application>
 
 </manifest>
