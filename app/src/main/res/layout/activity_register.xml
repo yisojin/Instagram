@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="kr.hs.dgsw.instagram.Activity.RegisterActivity">
+    tools:context="kr.hs.dgsw.instagram.Activity.RegisterActivity"
+    android:background="@color/colorPurple">
 
     <!--<com.facebook.login.widget.LoginButton-->
         <!--android:id="@+id/login_button"-->
@@ -20,15 +21,30 @@
         <!--app:layout_constraintStart_toStartOf="parent"-->
         <!--app:layout_constraintTop_toTopOf="parent"-->
         <!--app:layout_constraintVertical_bias="0.017" />-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:fontFamily="cursive"
+        android:text="jinstagram"
+        android:textSize="60dp"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toTopOf="@+id/etTel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/etTel"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="40dp"
+        android:background="@drawable/custom_editbox"
         android:ems="10"
         android:hint="Tel"
         android:inputType="textPersonName"
@@ -37,16 +53,17 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.076" />
+        app:layout_constraintVertical_bias="0.245" />
 
     <EditText
         android:id="@+id/etName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/custom_editbox"
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
@@ -55,16 +72,17 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.287" />
+        app:layout_constraintVertical_bias="0.413" />
 
     <EditText
         android:id="@+id/etAccount"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@drawable/custom_editbox"
         android:ems="10"
         android:hint="Account"
         android:inputType="textPersonName"
@@ -73,15 +91,16 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.44" />
+        app:layout_constraintVertical_bias="0.523" />
 
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:background="@drawable/custom_editbox"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -90,7 +109,7 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.597" />
+        app:layout_constraintVertical_bias="0.639" />
 
     <Button
         android:id="@+id/btnSubmit"
@@ -100,12 +119,14 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="join"
+        android:text="회원가입"
+        android:background="@drawable/custom_button"
+        android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.751" />
+        app:layout_constraintVertical_bias="0.794" />
 
     <TextView
         android:id="@+id/tvDoYouHaveAccount"
@@ -116,6 +137,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Do you have Account?"
+        android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.3"
@@ -132,6 +154,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Login"
+        android:textStyle="bold"
+        android:textColor="@color/colorWhite"
         android:onClick="clickToLogin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

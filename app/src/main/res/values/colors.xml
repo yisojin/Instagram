@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBlack">#000000</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
@@ -9,4 +11,5 @@
     <color name="colorTextBackground3">#58FAAC</color>
     <color name="colorTextBackground4">#5858FA</color>
     <color name="colorTextBackground5">#FA58D0</color>
+    <color name="colorPurple">#563F84</color>
 </resources>

@@ -52,7 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText etAccount = (EditText) findViewById(R.id.etAccount);
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
         Button btnSubmit = (Button) findViewById(R.id.btnSubmit);
-        css();
+//        css();
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
