@@ -12,4 +12,5 @@
     <color name="colorTextBackground4">#5858FA</color>
     <color name="colorTextBackground5">#FA58D0</color>
     <color name="colorPurple">#563F84</color>
+    <color name="colorLightPurple">#9c6dc4</color>
 </resources>
