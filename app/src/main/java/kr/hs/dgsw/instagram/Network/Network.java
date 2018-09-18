@@ -3,8 +3,10 @@ package kr.hs.dgsw.instagram.Network;
 import java.util.Optional;
 
 import kr.hs.dgsw.instagram.Model.BoardModel;
+import kr.hs.dgsw.instagram.Model.ResponseBoardFormat;
 import kr.hs.dgsw.instagram.Model.ResponseFormat;
 import kr.hs.dgsw.instagram.Model.ResponseListFormat;
+import kr.hs.dgsw.instagram.Model.ResponseUserFormat;
 import kr.hs.dgsw.instagram.Model.UserModel;
 import retrofit.Call;
 import retrofit.GsonConverterFactory;
@@ -23,7 +25,7 @@ public interface Network {
     Call<ResponseFormat> join(@Body UserModel userModel);
 
     @GET("/user")
-    Call<ResponseFormat> login(@Header("account") String account, @Header("password") String password);
+    Call<ResponseUserFormat> login(@Header("account") String account, @Header("password") String password);
 
     @POST("/board")
     Call<ResponseFormat> post(@Body BoardModel boardModel);
@@ -32,15 +34,26 @@ public interface Network {
     Call<ResponseListFormat> list();
 
     @GET("/board/view")
-    Call<ResponseFormat> view(@Header("id") int idx);
+    Call<ResponseBoardFormat> view(@Header("id") int idx);
+
+    @GET("/board/like")
+    Call<ResponseFormat> viewlike(@Header("boardId") int idx);
 
     @DELETE("/board")
-    Call<ResponseFormat> delete(@Body BoardModel boardModel);
+    Call<String> delete(@Header("idx") int idx);
+
     @PUT("/board")
-    Call<ResponseFormat> update(@Header("id") int idx,@Body BoardModel boardModel);
+    Call<ResponseBoardFormat> update(@Header("id") int idx, @Body BoardModel boardModel);
+
+    @PUT("/like")
+    Call<ResponseBoardFormat> like(@Header("account") String userId, @Body BoardModel boardModel);
 
     Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://10.80.161.183:8080")
+            .baseUrl("http://172.30.1.11:8080")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
+
+    //school 10.80.161.183
+    //exco stabucks 172.30.124.132
+    //home 172.30.1.37
 }
