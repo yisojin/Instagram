@@ -5,6 +5,7 @@ package kr.hs.dgsw.instagram.Model;
  */
 
 public class UserModel {
+    private int u_id;
     private String name;
     private String tel;
     private String account;
@@ -13,11 +14,20 @@ public class UserModel {
     @Override
     public String toString() {
         return "UserModel{" +
-                "name='" + name + '\'' +
+                "u_id=" + u_id +
+                ", name='" + name + '\'' +
                 ", tel='" + tel + '\'' +
                 ", account='" + account + '\'' +
                 ", password='" + password + '\'' +
                 '}';
+    }
+
+    public int getU_id() {
+        return u_id;
+    }
+
+    public void setU_id(int u_id) {
+        this.u_id = u_id;
     }
 
     public String getName() {

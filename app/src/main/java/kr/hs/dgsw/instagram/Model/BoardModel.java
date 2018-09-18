@@ -1,22 +1,33 @@
 package kr.hs.dgsw.instagram.Model;
 
 public class BoardModel {
+    private String id;
     private String title;
     private String content;
     private String writer;
-    private String created;
-    private String updated;
-
+    private int likes;
+    private String likesUser;
+    private boolean isLike;
 
     @Override
     public String toString() {
         return "BoardModel{" +
-                "title='" + title + '\'' +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 ", writer='" + writer + '\'' +
-                ", created='" + created + '\'' +
-                ", updated='" + updated + '\'' +
+                ", likes=" + likes +
+                ", likesUser='" + likesUser + '\'' +
+                ", isLike=" + isLike +
                 '}';
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -43,19 +54,27 @@ public class BoardModel {
         this.writer = writer;
     }
 
-    public String getCreated() {
-        return created;
+    public int getLikes() {
+        return likes;
     }
 
-    public void setCreated(String created) {
-        this.created = created;
+    public void setLikes(int likes) {
+        this.likes = likes;
     }
 
-    public String getUpdated() {
-        return updated;
+    public String getLikesUser() {
+        return likesUser;
     }
 
-    public void setUpdated(String updated) {
-        this.updated = updated;
+    public void setLikesUser(String likesUser) {
+        this.likesUser = likesUser;
+    }
+
+    public boolean isLike() {
+        return isLike;
+    }
+
+    public void setLike(boolean like) {
+        isLike = like;
     }
 }
