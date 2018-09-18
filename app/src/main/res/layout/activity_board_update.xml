@@ -5,13 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPurple"
-    tools:context=".Activity.BoardAddActivity">
+    tools:context=".Activity.BoardUpdateActivity">
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="84dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
@@ -21,12 +20,10 @@
         android:textAlignment="center"
         android:textColor="@color/colorWhite"
         android:textSize="60dp"
-        app:layout_constraintBottom_toTopOf="@+id/etTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etTitle"
@@ -35,7 +32,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="156dp"
         android:background="@drawable/custom_editbox"
         android:ems="10"
         android:hint="title"
@@ -43,8 +40,7 @@
         app:layout_constraintBottom_toTopOf="@+id/etContent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.845" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etContent"
@@ -60,14 +56,14 @@
         android:inputType="textMultiLine"
         android:lines="6"
         android:scrollbars="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/etWriter"
+        app:layout_constraintBottom_toTopOf="@+id/btnSend"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.867" />
+        app:layout_constraintVertical_bias="0.766" />
 
     <Button
-        android:id="@+id/btnAdd"
+        android:id="@+id/btnSend"
         android:layout_width="210dp"
         android:layout_height="40dp"
         android:layout_marginBottom="8dp"
@@ -83,24 +79,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.778" />
-
-    <EditText
-        android:id="@+id/etWriter"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/custom_editbox"
-        android:ems="10"
-        android:hint="writer"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/btnAdd"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.925" />
 
     <FrameLayout
         android:id="@+id/frag_main"
