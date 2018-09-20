@@ -40,31 +40,11 @@
         android:ems="10"
         android:hint="title"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/etContent"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.845" />
-
-    <EditText
-        android:id="@+id/etContent"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/custom_editbox"
-        android:ems="10"
-        android:hint="content"
-        android:inputType="textMultiLine"
-        android:lines="6"
-        android:scrollbars="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/etWriter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.867" />
+        app:layout_constraintVertical_bias="0.957" />
 
     <Button
         android:id="@+id/btnAdd"
@@ -140,7 +120,7 @@
             android:layout_height="56dp"
             android:scaleType="fitXY"
             android:background="@color/colorPurple"
-            app:srcCompat="@drawable/search"
+            app:srcCompat="@drawable/photo_camera"
             tools:layout_editor_absoluteX="71dp"
             tools:layout_editor_absoluteY="460dp" />
 
@@ -175,5 +155,15 @@
             tools:layout_editor_absoluteY="460dp" />
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivImage"
+        android:layout_width="wrap_content"
+        android:layout_height="174dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/etWriter"
+        app:srcCompat="@drawable/image"
+        tools:layout_editor_absoluteX="6dp" />
+
 
 </android.support.constraint.ConstraintLayout>
