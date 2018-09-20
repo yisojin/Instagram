@@ -8,6 +8,8 @@ import kr.hs.dgsw.instagram.Model.ResponseFormat;
 import kr.hs.dgsw.instagram.Model.ResponseListFormat;
 import kr.hs.dgsw.instagram.Model.ResponseUserFormat;
 import kr.hs.dgsw.instagram.Model.UserModel;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit.Call;
 import retrofit.GsonConverterFactory;
 import retrofit.Response;
@@ -16,8 +18,10 @@ import retrofit.http.Body;
 import retrofit.http.DELETE;
 import retrofit.http.GET;
 import retrofit.http.Header;
+import retrofit.http.Multipart;
 import retrofit.http.POST;
 import retrofit.http.PUT;
+import retrofit.http.Part;
 
 public interface Network {
 
@@ -47,6 +51,10 @@ public interface Network {
 
     @PUT("/like")
     Call<ResponseBoardFormat> like(@Header("account") String userId, @Body BoardModel boardModel);
+
+    @Multipart
+    @POST("/file")
+    Call<ResponseFormat> uploadImage(@Part("name") MultipartBody.Part image);
 
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("http://172.30.1.11:8080")
