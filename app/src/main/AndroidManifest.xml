@@ -21,6 +21,7 @@
             android:authorities="kr.hs.dgsw.instagram"
             android:name="android.support.v4.content.FileProvider"
             android:exported="false"
+            android:enabled="true"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
