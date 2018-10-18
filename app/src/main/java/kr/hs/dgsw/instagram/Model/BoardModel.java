@@ -1,9 +1,11 @@
 package kr.hs.dgsw.instagram.Model;
 
+import okhttp3.MultipartBody;
+
 public class BoardModel {
     private String id;
     private String title;
-    private String content;
+    private String file;
     private String writer;
     private int likes;
     private String likesUser;
@@ -14,7 +16,7 @@ public class BoardModel {
         return "BoardModel{" +
                 "id='" + id + '\'' +
                 ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
+                ", file=" + file +
                 ", writer='" + writer + '\'' +
                 ", likes=" + likes +
                 ", likesUser='" + likesUser + '\'' +
@@ -38,12 +40,12 @@ public class BoardModel {
         this.title = title;
     }
 
-    public String getContent() {
-        return content;
+    public String getFile() {
+        return file;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setFile(String file) {
+        this.file = file;
     }
 
     public String getWriter() {
