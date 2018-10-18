@@ -66,7 +66,6 @@ public class ViewBoardActivity extends AppCompatActivity {
                 Log.e("obj", board.toString());
 
                 tvTitle.setText(board.getTitle());
-                tvContent.setText(board.getContent());
 
 //                if (board.isLike()) {
 //                    cbLike.setChecked(true);
@@ -108,7 +107,6 @@ public class ViewBoardActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent1 = new Intent(ViewBoardActivity.this, BoardUpdateActivity.class);
                 intent1.putExtra("title", board.getTitle());
-                intent1.putExtra("content", board.getContent());
                 intent1.putExtra("id", id);
                 intent1.putExtra("likes", board.getLikes());
                 intent1.putExtra("isLike", board.isLike());
