@@ -1,5 +1,7 @@
 package kr.hs.dgsw.instagram.Model;
 
+import okhttp3.MultipartBody;
+
 public class ResponseFormat {
 
     private int status;
@@ -36,7 +38,7 @@ public class ResponseFormat {
         return data;
     }
 
-    public void setData(UserModel data) {
+    public void setData(Object data) {
         this.data = data;
     }
 }
