@@ -22,6 +22,7 @@ import retrofit.http.Multipart;
 import retrofit.http.POST;
 import retrofit.http.PUT;
 import retrofit.http.Part;
+import retrofit.http.PartMap;
 
 public interface Network {
 
@@ -54,14 +55,20 @@ public interface Network {
 
     @Multipart
     @POST("/file")
-    Call<ResponseFormat> uploadImage(@Part("name") MultipartBody.Part image);
+    Call<ResponseFormat> uploadImage(@Part("file\"; filename=\"photo.png") MultipartBody.Part image);
+
+    @Multipart
+    @GET("/file")
+    Call<ResponseFormat> downloadImage();
 
     Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://172.30.1.11:8080")
+            .baseUrl("http://10.80.161.183:8080")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
+
 
     //school 10.80.161.183
     //exco stabucks 172.30.124.132
     //home 172.30.1.37
+    //외할머니댁 172.30.1.27
 }
