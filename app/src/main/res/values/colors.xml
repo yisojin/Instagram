@@ -3,7 +3,7 @@
     <color name="colorWhite">#ffffff</color>
     <color name="colorBlack">#000000</color>
     <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryDark">#50C785</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorToLogin">#72caf9</color>
     <color name="colorTextBackground1">#FA5858</color>
@@ -11,6 +11,6 @@
     <color name="colorTextBackground3">#58FAAC</color>
     <color name="colorTextBackground4">#5858FA</color>
     <color name="colorTextBackground5">#FA58D0</color>
-    <color name="colorPurple">#563F84</color>
-    <color name="colorLightPurple">#9c6dc4</color>
+    <color name="colorPurple">#50C785</color>
+    <color name="colorLightPurple">#73EAA8</color>
 </resources>
