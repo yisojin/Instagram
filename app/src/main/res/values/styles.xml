@@ -16,5 +16,6 @@
 
     <style name="myDialog" parent="Theme.AppCompat.Dialog">
         <item name="android:textColor">@color/colorPurple</item>
+        <item name="android:background">@color/colorWhite</item>
     </style>
 </resources>
