@@ -5,7 +5,7 @@ import okhttp3.MultipartBody;
 public class BoardModel {
     private String id;
     private String title;
-    private String file;
+    private String fileName;
     private String writer;
     private int likes;
     private String likesUser;
@@ -16,7 +16,7 @@ public class BoardModel {
         return "BoardModel{" +
                 "id='" + id + '\'' +
                 ", title='" + title + '\'' +
-                ", file=" + file +
+                ", fileName='" + fileName + '\'' +
                 ", writer='" + writer + '\'' +
                 ", likes=" + likes +
                 ", likesUser='" + likesUser + '\'' +
@@ -40,12 +40,12 @@ public class BoardModel {
         this.title = title;
     }
 
-    public String getFile() {
-        return file;
+    public String getFileName() {
+        return fileName;
     }
 
-    public void setFile(String file) {
-        this.file = file;
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
     public String getWriter() {
