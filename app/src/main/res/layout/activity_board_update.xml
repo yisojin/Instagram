@@ -13,7 +13,7 @@
         android:layout_height="84dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:background="@color/colorPurple"
         android:fontFamily="cursive"
         android:text="jinstagram"
@@ -32,35 +32,17 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="156dp"
+        android:layout_marginTop="148dp"
         android:background="@drawable/custom_editbox"
         android:ems="10"
         android:hint="title"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/etContent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/etContent"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/custom_editbox"
-        android:ems="10"
-        android:hint="content"
-        android:inputType="textMultiLine"
-        android:lines="6"
-        android:scrollbars="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/btnSend"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.766" />
 
     <Button
         android:id="@+id/btnSend"
@@ -75,10 +57,10 @@
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.778" />
+        app:layout_constraintVertical_bias="0.907" />
 
     <FrameLayout
         android:id="@+id/frag_main"
@@ -86,72 +68,20 @@
         android:layout_height="600dp">
     </FrameLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="236dp"
+        android:layout_height="187dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:gravity="bottom"
-        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.662"
+        app:srcCompat="@drawable/image" />
 
-        <ImageButton
-            android:id="@+id/ibtnHome"
-            android:layout_width="71dp"
-            android:layout_height="58dp"
-            android:scaleType="fitXY"
-            android:background="@color/colorPurple"
-            app:srcCompat="@drawable/home"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="460dp" />
-
-        <ImageButton
-            android:id="@+id/ibtnSearch"
-            android:layout_width="63dp"
-            android:layout_height="56dp"
-            android:scaleType="fitXY"
-            android:background="@color/colorPurple"
-            app:srcCompat="@drawable/search"
-            tools:layout_editor_absoluteX="71dp"
-            tools:layout_editor_absoluteY="460dp" />
-
-        <ImageButton
-            android:id="@+id/ibtnAdd"
-            android:layout_width="63dp"
-            android:layout_height="56dp"
-            android:scaleType="fitXY"
-            android:background="@color/colorPurple"
-            app:srcCompat="@drawable/add"
-            tools:layout_editor_absoluteX="71dp"
-            tools:layout_editor_absoluteY="460dp" />
-
-        <ImageButton
-            android:id="@+id/ibtnLike"
-            android:layout_width="63dp"
-            android:layout_height="56dp"
-            android:scaleType="fitXY"
-            android:background="@color/colorPurple"
-            app:srcCompat="@drawable/like"
-            tools:layout_editor_absoluteX="71dp"
-            tools:layout_editor_absoluteY="460dp" />
-
-        <ImageButton
-            android:id="@+id/ibtnUser"
-            android:layout_width="67dp"
-            android:layout_height="58dp"
-            android:scaleType="fitXY"
-            android:background="@color/colorPurple"
-            app:srcCompat="@drawable/user"
-            tools:layout_editor_absoluteX="71dp"
-            tools:layout_editor_absoluteY="460dp" />
-
-    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

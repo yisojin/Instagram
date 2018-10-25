@@ -36,16 +36,17 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/custom_editbox"
         android:ems="10"
         android:hint="title"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.957" />
+        app:layout_constraintVertical_bias="0.268" />
 
     <Button
         android:id="@+id/btnAdd"
@@ -60,28 +61,9 @@
         android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.778" />
-
-    <EditText
-        android:id="@+id/etWriter"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/custom_editbox"
-        android:ems="10"
-        android:hint="writer"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/btnAdd"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.925" />
+        app:layout_constraintVertical_bias="0.947" />
 
     <FrameLayout
         android:id="@+id/frag_main"
@@ -89,82 +71,21 @@
         android:layout_height="600dp">
     </FrameLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+    <ImageView
+        android:id="@+id/ivImage"
+        android:layout_width="308dp"
+        android:layout_height="185dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:gravity="bottom"
-        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
-
-        <ImageButton
-            android:id="@+id/ibtnHome"
-            android:layout_width="71dp"
-            android:layout_height="58dp"
-            android:scaleType="fitXY"
-            android:background="@color/colorPurple"
-            app:srcCompat="@drawable/home"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="460dp" />
-
-        <ImageButton
-            android:id="@+id/ibtnSearch"
-            android:layout_width="63dp"
-            android:layout_height="56dp"
-            android:scaleType="fitXY"
-            android:background="@color/colorPurple"
-            app:srcCompat="@drawable/photo_camera"
-            tools:layout_editor_absoluteX="71dp"
-            tools:layout_editor_absoluteY="460dp" />
-
-        <ImageButton
-            android:id="@+id/ibtnAdd"
-            android:layout_width="63dp"
-            android:layout_height="56dp"
-            android:scaleType="fitXY"
-            android:background="@color/colorPurple"
-            app:srcCompat="@drawable/add"
-            tools:layout_editor_absoluteX="71dp"
-            tools:layout_editor_absoluteY="460dp" />
-
-        <ImageButton
-            android:id="@+id/ibtnLike"
-            android:layout_width="63dp"
-            android:layout_height="56dp"
-            android:scaleType="fitXY"
-            android:background="@color/colorPurple"
-            app:srcCompat="@drawable/like"
-            tools:layout_editor_absoluteX="71dp"
-            tools:layout_editor_absoluteY="460dp" />
-
-        <ImageButton
-            android:id="@+id/ibtnUser"
-            android:layout_width="67dp"
-            android:layout_height="58dp"
-            android:scaleType="fitXY"
-            android:background="@color/colorPurple"
-            app:srcCompat="@drawable/user"
-            tools:layout_editor_absoluteX="71dp"
-            tools:layout_editor_absoluteY="460dp" />
-
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/ivImage"
-        android:layout_width="wrap_content"
-        android:layout_height="174dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/etWriter"
-        app:srcCompat="@drawable/image"
-        tools:layout_editor_absoluteX="6dp" />
+        app:layout_constraintVertical_bias="0.632"
+        app:srcCompat="@drawable/image" />
 
 
 </android.support.constraint.ConstraintLayout>
