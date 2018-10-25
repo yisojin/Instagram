@@ -5,27 +5,15 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
-import android.widget.ListView;
-
-import java.util.ArrayList;
 
 import kr.hs.dgsw.instagram.Fragment.ListFrag;
 import kr.hs.dgsw.instagram.Fragment.LogFrag;
 import kr.hs.dgsw.instagram.Fragment.PostFrag;
 import kr.hs.dgsw.instagram.Fragment.SearchFrag;
 import kr.hs.dgsw.instagram.Fragment.UserFrag;
-import kr.hs.dgsw.instagram.Model.BoardModel;
-import kr.hs.dgsw.instagram.Model.ResponseListFormat;
-import kr.hs.dgsw.instagram.Network.Network;
 import kr.hs.dgsw.instagram.R;
-import retrofit.Call;
-import retrofit.Callback;
-import retrofit.Response;
-import retrofit.Retrofit;
 
 public class MainActivity extends AppCompatActivity {
 

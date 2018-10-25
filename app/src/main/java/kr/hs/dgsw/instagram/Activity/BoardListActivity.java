@@ -1,33 +1,34 @@
 package kr.hs.dgsw.instagram.Activity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
+import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.List;
 
 import kr.hs.dgsw.instagram.Model.BoardModel;
+import kr.hs.dgsw.instagram.Model.ResponseFormat;
 import kr.hs.dgsw.instagram.Model.ResponseListFormat;
 import kr.hs.dgsw.instagram.Network.Network;
 import kr.hs.dgsw.instagram.R;
-import retrofit.Call;
-import retrofit.Callback;
-import retrofit.Response;
-import retrofit.Retrofit;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class BoardListActivity extends AppCompatActivity {
 
@@ -55,19 +56,17 @@ public class BoardListActivity extends AppCompatActivity {
 
         Call<ResponseListFormat> listRequest = request.list();
         listRequest.enqueue(new Callback<ResponseListFormat>() {
-
             @Override
-            public void onResponse(Response<ResponseListFormat> response, Retrofit retrofit) {
+            public void onResponse(Call<ResponseListFormat> call, Response<ResponseListFormat> response) {
                 Log.e("response", response.body().getData().toString());
-                ArrayList<String> list = new ArrayList<String>();
-                ArrayList<String> listContent = new ArrayList<String>();
+                ArrayList<String> listTitle = new ArrayList<String>();
 
                 listBoard = new ArrayList<BoardModel>();
                 for (BoardModel board : response.body().getData()) {
                     listBoard.add(board);
-                    list.add(board.getTitle());
+                    listTitle.add(board.getTitle());
                 }
-                adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.list_item, R.id.text1, list) {
+                adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.list_item, R.id.text1, listTitle) {
                     @NonNull
                     @Override
                     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -78,13 +77,11 @@ public class BoardListActivity extends AppCompatActivity {
                 };
 
                 listView.setAdapter(adapter);
-
             }
 
             @Override
-            public void onFailure(Throwable t) {
+            public void onFailure(Call<ResponseListFormat> call, Throwable t) {
                 Log.e("response", t.getMessage());
-
             }
         });
 

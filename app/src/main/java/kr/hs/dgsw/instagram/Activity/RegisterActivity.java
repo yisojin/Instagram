@@ -8,20 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
-import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
-import com.facebook.appevents.AppEventsLogger;
-import com.facebook.login.Login;
-import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
-
-import org.json.JSONObject;
 
 import kr.hs.dgsw.instagram.Common.IsValid;
 import kr.hs.dgsw.instagram.Database.DBManager;
@@ -29,10 +17,9 @@ import kr.hs.dgsw.instagram.Model.ResponseFormat;
 import kr.hs.dgsw.instagram.Model.UserModel;
 import kr.hs.dgsw.instagram.Network.Network;
 import kr.hs.dgsw.instagram.R;
-import retrofit.Call;
-import retrofit.Callback;
-import retrofit.Response;
-import retrofit.Retrofit;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -71,9 +58,9 @@ public class RegisterActivity extends AppCompatActivity {
 
                 final Network network = Network.retrofit.create(Network.class);
                 Call<ResponseFormat> call = network.join(userModel);
-                 call.enqueue(new Callback<ResponseFormat>() {
+                call.enqueue(new Callback<ResponseFormat>() {
                     @Override
-                    public void onResponse(Response<ResponseFormat> response, Retrofit retrofit) {
+                    public void onResponse(Call<ResponseFormat> call, Response<ResponseFormat> response) {
                         Log.e("result", response.body().getData().toString());
 
                         Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
@@ -81,8 +68,8 @@ public class RegisterActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Throwable t) {
-                        Log.e("Error", t.getMessage());
+                    public void onFailure(Call<ResponseFormat> call, Throwable t) {
+
                     }
                 });
 

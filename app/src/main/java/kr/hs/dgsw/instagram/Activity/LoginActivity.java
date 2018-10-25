@@ -1,6 +1,5 @@
 package kr.hs.dgsw.instagram.Activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -28,10 +27,9 @@ import kr.hs.dgsw.instagram.Model.ResponseUserFormat;
 import kr.hs.dgsw.instagram.Model.UserModel;
 import kr.hs.dgsw.instagram.Network.Network;
 import kr.hs.dgsw.instagram.R;
-import retrofit.Call;
-import retrofit.Callback;
-import retrofit.Response;
-import retrofit.Retrofit;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -101,9 +99,8 @@ public class LoginActivity extends AppCompatActivity {
 
                 Call<ResponseUserFormat> call = network.login(account, password);
                 call.enqueue(new Callback<ResponseUserFormat>() {
-
                     @Override
-                    public void onResponse(Response<ResponseUserFormat> response, Retrofit retrofit) {
+                    public void onResponse(Call<ResponseUserFormat> call, Response<ResponseUserFormat> response) {
                         Log.e("result", response.body().toString());
                         UserModel user = response.body().getData();
                         if (response.body() != null) {
@@ -119,10 +116,11 @@ public class LoginActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Throwable t) {
-                        Log.e("result", t.getMessage());
+                    public void onFailure(Call<ResponseUserFormat> call, Throwable t) {
+
                     }
                 });
+
             }
         });
 

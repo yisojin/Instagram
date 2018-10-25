@@ -13,10 +13,9 @@ import kr.hs.dgsw.instagram.Model.BoardModel;
 import kr.hs.dgsw.instagram.Model.ResponseBoardFormat;
 import kr.hs.dgsw.instagram.Network.Network;
 import kr.hs.dgsw.instagram.R;
-import retrofit.Call;
-import retrofit.Callback;
-import retrofit.Response;
-import retrofit.Retrofit;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class BoardUpdateActivity extends AppCompatActivity {
 
@@ -65,7 +64,7 @@ public class BoardUpdateActivity extends AppCompatActivity {
                 Call<ResponseBoardFormat> request = network.update(idx, bm);
                 request.enqueue(new Callback<ResponseBoardFormat>() {
                     @Override
-                    public void onResponse(Response<ResponseBoardFormat> response, Retrofit retrofit) {
+                    public void onResponse(Call<ResponseBoardFormat> call, Response<ResponseBoardFormat> response) {
                         BoardModel b = response.body().getData();
                         Log.e("response", response.body().toString());
                         Intent intent1 = new Intent(BoardUpdateActivity.this, ViewBoardActivity.class);
@@ -74,10 +73,11 @@ public class BoardUpdateActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Throwable t) {
-                        Log.e("response", t.getMessage());
+                    public void onFailure(Call<ResponseBoardFormat> call, Throwable t) {
+
                     }
                 });
+
             }
         });
 
