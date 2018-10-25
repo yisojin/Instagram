@@ -1,7 +1,5 @@
 package kr.hs.dgsw.instagram.Network;
 
-import java.util.Optional;
-
 import kr.hs.dgsw.instagram.Model.BoardModel;
 import kr.hs.dgsw.instagram.Model.ResponseBoardFormat;
 import kr.hs.dgsw.instagram.Model.ResponseFormat;
@@ -9,20 +7,17 @@ import kr.hs.dgsw.instagram.Model.ResponseListFormat;
 import kr.hs.dgsw.instagram.Model.ResponseUserFormat;
 import kr.hs.dgsw.instagram.Model.UserModel;
 import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
-import retrofit.Call;
-import retrofit.GsonConverterFactory;
-import retrofit.Response;
-import retrofit.Retrofit;
-import retrofit.http.Body;
-import retrofit.http.DELETE;
-import retrofit.http.GET;
-import retrofit.http.Header;
-import retrofit.http.Multipart;
-import retrofit.http.POST;
-import retrofit.http.PUT;
-import retrofit.http.Part;
-import retrofit.http.PartMap;
+import retrofit2.Call;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Body;
+import retrofit2.http.DELETE;
+import retrofit2.http.GET;
+import retrofit2.http.Header;
+import retrofit2.http.Multipart;
+import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Part;
 
 public interface Network {
 
@@ -33,7 +28,7 @@ public interface Network {
     Call<ResponseUserFormat> login(@Header("account") String account, @Header("password") String password);
 
     @POST("/board")
-    Call<ResponseFormat> post(@Body BoardModel boardModel);
+    Call<ResponseBoardFormat> post(@Body BoardModel boardModel);
 
     @GET("/board")
     Call<ResponseListFormat> list();
@@ -55,11 +50,10 @@ public interface Network {
 
     @Multipart
     @POST("/file")
-    Call<ResponseFormat> uploadImage(@Part("file\"; filename=\"photo.png") MultipartBody.Part image);
+    Call<ResponseFormat> uploadImage(@Part MultipartBody.Part image, @Header("boardId")int id);
 
-    @Multipart
     @GET("/file")
-    Call<ResponseFormat> downloadImage();
+    Call<ResponseFormat> downloadImage(@Header("boardId")int id);
 
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("http://10.80.161.183:8080")
