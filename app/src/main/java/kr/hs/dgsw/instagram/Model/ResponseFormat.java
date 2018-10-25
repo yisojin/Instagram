@@ -1,12 +1,14 @@
 package kr.hs.dgsw.instagram.Model;
 
+import java.io.File;
+
 import okhttp3.MultipartBody;
 
 public class ResponseFormat {
 
     private int status;
     private String message;
-    private Object data;
+    private FileModel data;
 
 
     @Override
@@ -38,7 +40,7 @@ public class ResponseFormat {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(FileModel data) {
         this.data = data;
     }
 }
