@@ -48,7 +48,7 @@ public class BoardUpdateActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int idx = intent.getIntExtra("id", 0);
                 String title = etTitle.getText().toString();
-                String writer = sharedPreferences.getString("name", "");
+                int id = Integer.parseInt(sharedPreferences.getString("id", ""));
                 String likeUser = sharedPreferences.getString("name", "");
                 boolean isLike = intent.getBooleanExtra("isLike", false);
                 int likes = intent.getIntExtra("likes", 0);
@@ -56,7 +56,7 @@ public class BoardUpdateActivity extends AppCompatActivity {
                 BoardModel bm = new BoardModel();
                 bm.setId(Integer.toString(idx));
                 bm.setTitle(title);
-                bm.setWriter(writer);
+                bm.setU_id(id);
                 bm.setLike(isLike);
                 bm.setLikes(likes);
                 bm.setLikesUser(likeUser);

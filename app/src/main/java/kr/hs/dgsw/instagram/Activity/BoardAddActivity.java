@@ -217,11 +217,12 @@ public class BoardAddActivity extends AppCompatActivity implements ActivityCompa
                 @Override
                 public void onClick(View v) {
                     String writer = sharedPreferences.getString("name","");
+                    int id = Integer.parseInt(sharedPreferences.getString("id",""));
                     String title = texttitle.getText().toString();
 
                     BoardModel bm = new BoardModel();
                     bm.setTitle(title);
-                    bm.setWriter(writer);
+                    bm.setU_id(id);
 
                     Call<ResponseBoardFormat> call = network.post(bm);
                     call.enqueue(new Callback<ResponseBoardFormat>() {
