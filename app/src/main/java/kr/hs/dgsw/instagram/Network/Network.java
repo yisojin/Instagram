@@ -56,13 +56,11 @@ public interface Network {
     Call<ResponseFormat> downloadImage(@Header("boardId")int id);
 
     Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://10.80.161.183:8080")
+            .baseUrl("http://192.168.0.13:8080")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
-
-    //school 10.80.161.183
-    //exco stabucks 172.30.124.132
-    //home 172.30.1.37
-    //외할머니댁 172.30.1.27
+    //LATELY : 192.168.0.13
+    //SAMSUNG :192.168.123.173
+    //192.168.123.173
 }
