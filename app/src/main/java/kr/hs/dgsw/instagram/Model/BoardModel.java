@@ -6,7 +6,7 @@ public class BoardModel {
     private String id;
     private String title;
     private String fileName;
-    private String writer;
+    private int u_id;
     private int likes;
     private String likesUser;
     private boolean isLike;
@@ -17,7 +17,7 @@ public class BoardModel {
                 "id='" + id + '\'' +
                 ", title='" + title + '\'' +
                 ", fileName='" + fileName + '\'' +
-                ", writer='" + writer + '\'' +
+                ", u_id=" + u_id +
                 ", likes=" + likes +
                 ", likesUser='" + likesUser + '\'' +
                 ", isLike=" + isLike +
@@ -48,12 +48,12 @@ public class BoardModel {
         this.fileName = fileName;
     }
 
-    public String getWriter() {
-        return writer;
+    public int getU_id() {
+        return u_id;
     }
 
-    public void setWriter(String writer) {
-        this.writer = writer;
+    public void setU_id(int u_id) {
+        this.u_id = u_id;
     }
 
     public int getLikes() {
