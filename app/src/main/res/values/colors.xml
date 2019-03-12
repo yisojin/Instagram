@@ -11,6 +11,6 @@
     <color name="colorTextBackground3">#58FAAC</color>
     <color name="colorTextBackground4">#5858FA</color>
     <color name="colorTextBackground5">#FA58D0</color>
-    <color name="colorPurple">#50C785</color>
-    <color name="colorLightPurple">#73EAA8</color>
+    <color name="colorPurple">#F78E8B</color>
+    <color name="colorLightPurple">#fc7979</color>
 </resources>
